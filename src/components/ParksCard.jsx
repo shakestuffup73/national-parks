@@ -1,19 +1,19 @@
-const ParksCard = (props) => {
+import { Grid, Card, CardContent } from '@mui/material'
 
-  const {photo, description, name, state, website} = props
+export default function ParksCard({parks}) {
   return ( 
-    <div>
-      {photo === null ?
-        <img src='/NPSlogo.jpg' alt='NPS-logo' />
-        : 
-        <img src={photo.url} alt='park-detail' />
-      }
-      <h1>{name}, {state}</h1>
-      <h3>{description}</h3>
-      <a href={website} target='blank'>Site</a>
-    </div>
-
+    <Grid container spacing={5}>
+      {parks.map((park, index) => (
+        <Grid item key={index} xs={12} sm={6} md={4}>
+          <Card>
+            <CardContent>
+              <img src={park.images[0].url} alt='national park' />
+              <h1>{park.fullName}</h1>
+              <h3>{park.description}</h3>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
   );
 }
-
-export default ParksCard;
