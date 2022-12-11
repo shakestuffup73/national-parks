@@ -1,6 +1,6 @@
 import { Grid, Card, CardContent } from '@mui/material'
 
-export default function ParksCard({parks}) {
+export default function ParksCard({ parks }) {
   return ( 
     <Grid container spacing={3}>
       {parks.map((park, index) => (
@@ -10,6 +10,7 @@ export default function ParksCard({parks}) {
               <img src={park.images[0].url} alt='national park' />
               <h2>{park.fullName}</h2>
               <h4>{park.description}</h4>
+              <div>{park.url}</div>
             </CardContent>
           </Card>
         </Grid>
