@@ -4,12 +4,12 @@ export default function ParksCard({parks}) {
   return ( 
     <Grid container spacing={5}>
       {parks.map((park, index) => (
-        <Grid item key={index} xs={12} sm={6} md={4}>
+        <Grid item key={index} xs={12} sm={6} md={3}>
           <Card>
             <CardContent>
               <img src={park.images[0].url} alt='national park' />
-              <h1>{park.fullName}</h1>
-              <h3>{park.description}</h3>
+              <h2>{park.fullName}</h2>
+              <h4>{park.description}</h4>
             </CardContent>
           </Card>
         </Grid>

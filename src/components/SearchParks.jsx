@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NativeSelect, InputLabel } from '@mui/material'
 import { usStates } from '../data/usStates.js'
-import { fetchState } from '../api/Api.jsx'
+import { fetchState } from '../api/FetchState.jsx'
 import ParksCard from './ParksCard'
 
 const SearchParks = (props) => {
