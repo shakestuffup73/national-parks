@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NativeSelect, InputLabel } from '@mui/material'
+import { Select, InputLabel, MenuItem } from '@mui/material'
 import { usStates } from '../data/usStates.js'
 import { fetchState } from '../api/FetchState.jsx'
 import ParksCard from './ParksCard'
@@ -30,12 +30,11 @@ const SearchParks = (props) => {
       </div>
       <div>
         <InputLabel>State</InputLabel>
-        <NativeSelect defaultValue='' onChange={event => handleStateChange(event.target.value)}>
-          <option value=''></option>
+        <Select defaultValue='' onChange={event => handleStateChange(event.target.value)}>
           {states.map((state, index) =>
-            <option value={state} key={index}>{state}</option>
+            <MenuItem value={state} key={index}>{state}</MenuItem>
           )}
-        </NativeSelect>
+        </Select>
         <ParksCard parks={parks} />
       </div>
     </>
