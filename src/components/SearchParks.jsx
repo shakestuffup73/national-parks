@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NativeSelect, InputLabel } from '@mui/material'
 import { usStates } from '../data/usStates.js'
-import { fetchData } from '../api/Api.jsx'
+import { fetchState } from '../api/Api.jsx'
 import ParksCard from './ParksCard'
 
 const SearchParks = (props) => {
@@ -18,7 +18,7 @@ const SearchParks = (props) => {
   }, [])
 
   const handleStateChange = async (usState) => {
-    fetchData(usState).then(parks => {
+    fetchState(usState).then(parks => {
       setPark(parks)
     })
   }

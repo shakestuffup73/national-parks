@@ -3,7 +3,7 @@ import axios from 'axios'
 const parkURL = 'https://developer.nps.gov/api/v1/parks'
 const key = process.env.REACT_APP_API_KEY
 
-export const fetchData = (state) => {
+export const fetchState = (state) => {
   return ( 
     axios.get(`${parkURL}?stateCode=${state}&api_key=${key}`)
       .then(res => {
