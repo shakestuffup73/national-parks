@@ -3,7 +3,6 @@ import { Select, InputLabel, MenuItem } from '@mui/material'
 import { usStates } from '../data/usStates.js'
 import { parkCodes } from '../data/parkCodes.js'
 import { fetchState } from '../api/FetchState.jsx'
-import { fetchCam } from '../api/FetchCam.jsx'
 import ParksCard from './ParksCard'
 
 const SearchParks = (props) => {
@@ -28,9 +27,6 @@ const SearchParks = (props) => {
   const handleStateChange = async (usState, parkCodes) => {
     fetchState(usState).then(parks => {
       setPark(parks)
-    })
-    fetchCam(parkCodes).then(parks => {
-      setCam(parks)
     })
   }
 
